@@ -101,6 +101,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Custom Environment Variables
 export PATH="$PATH:/home/logan/go/bin"
+export LD_LIBRARY_PATH="/usr/local/lib"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -127,3 +128,5 @@ if ! shopt -oq posix; then
   fi
 fi
 . "$HOME/.cargo/env"
+
+[ -f "/home/logan/.ghcup/env" ] && source "/home/logan/.ghcup/env" # ghcup-env

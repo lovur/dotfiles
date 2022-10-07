@@ -22,9 +22,11 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.signcolumn = "yes"
+vim.cmd [[set formatoptions-=co]]
 
 -- Complete options
 vim.opt.completeopt = {'menuone', 'noinsert', 'noselect'}
 vim.opt.shortmess:append("c")
+vim.opt.formatoptions:remove({ 'c', 'o' })
 
 vim.g.mapleader = " "

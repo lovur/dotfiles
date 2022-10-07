@@ -10,6 +10,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "gm", vim.lsp.buf.implementation, bufopts)
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
+    vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, bufopts)
     -- vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, {buffer=0})
     -- vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, {buffer=0})
 end
@@ -34,6 +35,11 @@ nvim_lsp.tsserver.setup{
 
 -- Go
 nvim_lsp.gopls.setup{
+    capabilities=capabilities,
+    on_attach=on_attach
+}
+
+nvim_lsp.hls.setup{
     capabilities=capabilities,
     on_attach=on_attach
 }

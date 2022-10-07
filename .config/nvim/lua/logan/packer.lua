@@ -7,14 +7,20 @@ end
 
 return require('packer').startup(function(use)
 
-    -- Colorschemes
-    use 'folke/tokyonight.nvim'
-    
     -- Neovim essentials
     use 'nvim-lua/plenary.nvim'
     use 'nvim-lua/popup.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'wbthomason/packer.nvim'
+    use("nvim-treesitter/nvim-treesitter", {
+        run = ":TSUpdate"
+    })
+    use("nvim-treesitter/playground")
+    use("romgrk/nvim-treesitter-context")
+
+    -- Colorschemes
+    --use 'folke/tokyonight.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" } 
 
     -- Cmp plugins
     use 'neovim/nvim-lspconfig'
