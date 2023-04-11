@@ -100,7 +100,6 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Custom Environment Variables
-export PATH="$PATH:/home/logan/go/bin"
 export LD_LIBRARY_PATH="/usr/local/lib"
 
 # Alias definitions.
@@ -129,4 +128,3 @@ if ! shopt -oq posix; then
 fi
 . "$HOME/.cargo/env"
 
-[ -f "/home/logan/.ghcup/env" ] && source "/home/logan/.ghcup/env" # ghcup-env
